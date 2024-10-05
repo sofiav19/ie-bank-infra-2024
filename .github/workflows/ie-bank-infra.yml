@@ -3,8 +3,8 @@ name: ie-bank-infra
 on:
   workflow_dispatch:
   push:
-      paths:
-        - '!scripts/**'
+      paths-ignore:
+        - 'scripts/**'
 
 env:
   RESOURCE_GROUP_DEV: BCSAI2024-DEVOPS-PROFESSORS
