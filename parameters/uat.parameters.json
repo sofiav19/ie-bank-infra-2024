@@ -6,19 +6,19 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "svitorica-dbsrv-dev"
+            "value": "svitorica-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "svitorica-db-dev"
+            "value": "svitorica-db-uat"
         },
         "appServicePlanName": {
-            "value": "svitorica-asp-dev"
+            "value": "svitorica-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "svitorica-be-dev"
+            "value": "svitorica-be-uat"
         },
         "appServiceAppName": {
-            "value": "svitorica-fe-dev" //sofia19-fe-dev?
+            "value": "svitorica-fe-uat" //sofia19-fe-dev?
         },
         "location": {
             "value": "North Europe"
