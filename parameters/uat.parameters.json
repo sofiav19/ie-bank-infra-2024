@@ -18,7 +18,7 @@
             "value": "svitorica-be-uat"
         },
         "appServiceAppName": {
-            "value": "svitorica-fe-uat" //sofia19-fe-dev?
+            "value": "svitorica-fe-uat" 
         },
         "location": {
             "value": "North Europe"
