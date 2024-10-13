@@ -9,7 +9,7 @@ on:
       - 'scripts/**'
   pull_request:
     branches:
-      - main  #
+      - main
 
 env:
   RESOURCE_GROUP_DEV: BCSAI2024-DEVOPS-STUDENTS-A-DEV
