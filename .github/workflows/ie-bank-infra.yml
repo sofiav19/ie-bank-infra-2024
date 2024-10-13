@@ -3,15 +3,20 @@ name: ie-bank-infra
 on:
   workflow_dispatch:
   push:
-      paths-ignore:
-        - 'scripts/**'
+    branches:  # Any branch triggers the dev deployment
+      - '*'
+    paths-ignore:
+      - 'scripts/**'
+  pull_request:
+    branches:
+      - main  #
 
 env:
   RESOURCE_GROUP_DEV: BCSAI2024-DEVOPS-STUDENTS-A-DEV
   RESOURCE_GROUP_UAT: BCSAI2024-DEVOPS-STUDENTS-A-UAT
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
   USER_ALIAS: svitorica
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,7 +59,8 @@ jobs:
   deploy-uat:
   #   if: github.ref == 'refs/heads/uat'
       runs-on: ubuntu-latest
-      needs: build
+      needs: [build,deploy-dev]
+      if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'  # UAT condition
       environment:
         name: 'UAT'
 
