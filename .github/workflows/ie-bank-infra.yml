@@ -1,17 +1,14 @@
 name: ie-bank-infra
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - '*'  # Trigger on any branch
-    branches-ignore:
-      - main  # Exclude main from normal push builds
     paths-ignore:
       - 'scripts/**'
   pull_request:
     branches:
-      - main  # Trigger on pull requests to the 'main' branch
-  workflow_dispatch:
+      - main
+
       
 
 env:
@@ -63,7 +60,7 @@ jobs:
   #   if: github.ref == 'refs/heads/uat'
       runs-on: ubuntu-latest
       needs: [build,deploy-dev]
-      if: github.event_name == 'pull_request' && github.base_ref == 'main' || github.ref == 'refs/heads/main'  # Only run UAT for PRs to main or main branch
+      if: github.event_name == 'pull_request' && github.base_ref == 'main' || github.ref == 'refs/heads/main'
       environment:
         name: 'UAT'
 
