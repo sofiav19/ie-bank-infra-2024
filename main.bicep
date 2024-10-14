@@ -50,6 +50,7 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     tier: 'Burstable'
   }
   properties: {
+    // database username and password
     administratorLogin: 'iebankdbadmin'
     administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$'
     createMode: 'Default'
